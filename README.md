@@ -133,4 +133,21 @@ Finally, I used <strong> DNSRecon</strong> to perform DNS enumeration and gather
 
 
 
+
+7. Risk Analysis & Findings
+## 7. Risk Analysis & Findings
+
+| # | Risk / Finding | Evidence / Observation | Potential Impact | Severity |
+|---|---|---|---|---|
+| 1 | **Web Technology Information Exposed** | WhatWeb identified WordPress v7.0.4 & WP Download Manager v3.3.58. | Allows attackers to research version-specific CVEs. | **Medium** |
+| 2 | **Target Server IP Resolvable** | Nslookup resolved the domain to `192.232.216.135`. | Reveals the direct network location of the hosting service. | **Low** |
+| 3 | **Technical HTTP Headers Visible** | Curl revealed response headers and the `/wp-json/` endpoint. | Assists attackers in mapping potential API attack surfaces. | **Low** |
+| 4 | **WAF Fingerprint Identified** | Wafw00f identified ModSecurity. | Informs attackers of security mechanisms protecting the application. | **Low** |
+| 5 | **Public DNS Infrastructure Enumerated** | DNSRecon/Dig mapped NS, MX, and TXT records. | Facilitates broader organizational and infrastructure profiling. | **Medium** |
+| 6 | **Active Host Discovered on Subnet** | Zenmap mapped a live host at `192.168.56.1`. | Identifies active endpoints for further internal network mapping. | **Low** |
+
+
+
+
+
  
