@@ -100,22 +100,37 @@ During Week 2 of my Cybersecurity Internship at Networkwalks, I performed domain
 </p>
 <p>
 I began with <strong>WHOIS</strong> to collect publicly available domain registration details, including registrar information, registration dates, and name servers. This helped me understand the domain's registration history and identify its associated DNS infrastructure.
+  
+  <img width="1908" height="977" alt="2" src="find the domain registration details.png">
 </p>
 <p>
 Next, I used <strong>WhatWeb</strong>  to identify the technologies powering the website. The results revealed the use of <strong>WordPress 7.1.4 and WP Download Manager 3.3.76,</strong> along with other web technologies. This provided an overview of the website's technology stack.
+  
+   <img width="1908" height="977" alt="2" src="whatwebto fingerprint the web technologies.png">
 </p>
 <p>
 Using <strong>Nslookup,</strong> I resolved the domain name to its associated IP address, which was identified as <strong>192.232.216.135.</strong> This demonstrated how DNS translates domain names into IP addresses, allowing systems to locate web servers.
+  
+   <img width="1908" height="977" alt="2" src="nslookup.png">
 </p>
 <p>
 I then used <strong> cURL </strong> with the -I option to inspect the website's HTTP response headers and identify additional information about its web application, including the exposed WordPress REST API endpoint <code> /wp-json/.</code> This helped me understand how the web server communicates with clients and exposes application-related information.
+  
+   <img width="1908" height="977" alt="2" src="Run curl -I to read the HTTP response headers.png">
 </p>
 <p>
 To investigate the website's security infrastructure, I used <strong>WAFW00F</strong> to identify the presence of a Web Application Firewall (WAF). The results indicated that <strong> ModSecurity (SpiderLabs)</strong> was protecting the website. This provided insight into the security technology used to help filter and monitor potentially malicious web traffic.
+  
+   <img width="1908" height="977" alt="2" src="WAFW00F – Web Application Firewall detection..png">
 </p>
 <p>
 Finally, I used <strong> DNSRecon</strong> to perform DNS enumeration and gather additional information about the domain's DNS infrastructure, including name servers, mail servers, SPF/TXT records, service records, and other DNS-related details. This helped me understand how DNS records support domain services and infrastructure.
+
+   <img width="1908" height="977" alt="2" src="Run dnsreconto enumerate all DNS records..png">
 </p>
+
+
+
 
 
  
