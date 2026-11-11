@@ -157,8 +157,10 @@ After completing the scan, I opened the Topology section in Zenmap to visualize 
 
 ## 6. Topology Output and Evidence
 
- <img width="1908" height="977" alt="2" src="Run dnsreconto enumerate all DNS records..png">
+ <img width="1908" height="977" alt="2" src="zenmap 1.png">
 
+ 
+ <img width="1908" height="977" alt="2" src="Topology.png">
 
 
 
