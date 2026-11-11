@@ -131,20 +131,49 @@ Finally, I used <strong> DNSRecon</strong> to perform DNS enumeration and gather
 
 
 
+## 5. Module W2-PM5- Network Discovering Using Zenmap
+
+For the second activity, I used Zenmap to perform network discovery on my local network. The practical required me to identify my local IP address and subnet, discover active hosts, identify their IP and MAC addresses, and generate a network topology.
+I first used the Windows ipconfig command to identify my local network configuration. I then entered the target subnet into Zenmap and selected the Ping Scan profile to identify active hosts.
+
+The scan was performed using the following target network:
+*	**Target Subnet:** 192.168.254.0/24
+*	**Scan Profile:** Ping Scan
+*	**Total IP Addresses Scanned:** 256
+  
+ The scan successfully identified two active hosts:
+*	**192.168.254.254**
+*	**192.168.254.1**
+  
+The scan results also identified the following MAC address:
+*	**192.168.254.254:** 00:50:56:F6:67:91 (VMware)
+*	**192.168.254.1:** MAC address not displayed in the scan output.
+  
+Both hosts were confirmed to be reachable. The scan completed successfully in approximately **8.65 seconds.**
+
+After completing the scan, I opened the Topology section in Zenmap to visualize the discovered network devices and their connections. I enabled the topology legend and saved the network topology in PDF format as required by the practical task.
+
+> **Note:** The scan results documented above represent the actual results obtained from my local network during the practical exercise.
+
+## 6. Topology Output and Evidence
+
+ <img width="1908" height="977" alt="2" src="Run dnsreconto enumerate all DNS records..png">
 
 
 
-7. Risk Analysis & Findings
+
+
+
 ## 7. Risk Analysis & Findings
 
 | # | Risk / Finding | Evidence / Observation | Potential Impact | Severity |
 |---|---|---|---|---|
-| 1 | **Web Technology Information Exposed** | WhatWeb identified WordPress v7.0.4 & WP Download Manager v3.3.58. | Allows attackers to research version-specific CVEs. | **Medium** |
+| 1 | **Web Technology Information Exposed** | WhatWeb identified WordPress  & WP Download Manager  | Allows attackers to research version-specific CVEs. | **Medium** |
 | 2 | **Target Server IP Resolvable** | Nslookup resolved the domain to `192.232.216.135`. | Reveals the direct network location of the hosting service. | **Low** |
 | 3 | **Technical HTTP Headers Visible** | Curl revealed response headers and the `/wp-json/` endpoint. | Assists attackers in mapping potential API attack surfaces. | **Low** |
 | 4 | **WAF Fingerprint Identified** | Wafw00f identified ModSecurity. | Informs attackers of security mechanisms protecting the application. | **Low** |
 | 5 | **Public DNS Infrastructure Enumerated** | DNSRecon/Dig mapped NS, MX, and TXT records. | Facilitates broader organizational and infrastructure profiling. | **Medium** |
-| 6 | **Active Host Discovered on Subnet** | Zenmap mapped a live host at `192.168.56.1`. | Identifies active endpoints for further internal network mapping. | **Low** |
+| 6 | **Active Host Discovered on Subnet** | Zenmap mapped a live host   | Identifies active endpoints for further internal network mapping. | **Low** |
 
 
 
