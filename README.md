@@ -48,6 +48,8 @@
   </tbody>
 </table>
 
+---
+
 <!-- 1. DISCLAIMER -->
 <h2>1. Ethical Use & Liability Disclaimer</h2>
 <div class="disclaimer">
@@ -60,6 +62,8 @@ I accept full responsibility for my activities and strongly support ethical hack
 
 <hr>
 
+---
+
 <!-- 2. INTRODUCTION -->
 <h2>2. Introduction</h2>
 <p>
@@ -69,6 +73,8 @@ These practical exercises helped me understand how security professionals gather
 </p>
 
 <hr>
+
+---
 
 <!-- 3. TOOLS USED -->
 <h2>3. Tools Used</h2>
@@ -90,7 +96,7 @@ These practical exercises helped me understand how security professionals gather
   </tbody>
 </table>
 
-
+---
 
 <h2>4. Module W2-PM1-Reconnaissance Six Using Kali tools</h2>
 
@@ -120,21 +126,33 @@ Finally, I used <strong> DNSRecon</strong> to perform DNS enumeration and gather
 
 </p>
 
+---
+
 ## 5. Evidence Output
  <img width="1908" height="977" alt="2" src="find the domain registration details.png">
 
+ ---
+
  <img width="1908" height="977" alt="2" src="whatwebto fingerprint the web technologies.png">
+
+ ---
 
   <img width="1908" height="977" alt="2" src="nslookup.png">
 
+  ---
+
 <img width="1908" height="977" alt="2" src="Run curl -I to read the HTTP response headers.png">
 
+---
+
 <img width="1908" height="977" alt="2" src="WAFW00F – Web Application Firewall detection..png">
+
+---
 
 <img width="1908" height="977" alt="2" src="Run dnsreconto enumerate all DNS records..png">
   
 
-   
+   ---
 
 
 ## 6. Module W2-PM5- Network Discovering Using Zenmap
@@ -160,17 +178,19 @@ Both hosts were confirmed to be reachable. The scan completed successfully in ap
 After completing the scan, I opened the Topology section in Zenmap to visualize the discovered network devices and their connections. I enabled the topology legend and saved the network topology in PDF format as required by the practical task.
 
 > **Note:** The scan results documented above represent the actual results obtained from my local network during the practical exercise.
+---
 
 ## 7. Topology Output and Evidence
 
  <img width="1908" height="977" alt="2" src="zenmap 1.png">
 
+ ---
  
  <img width="1908" height="977" alt="2" src="Topology.png">
 
 
 
-
+---
 
 ## 8. Risk Analysis & Findings
 
@@ -183,6 +203,7 @@ After completing the scan, I opened the Topology section in Zenmap to visualize 
 | 5 | **Public DNS Infrastructure Enumerated** | DNSRecon/Dig mapped NS, MX, and TXT records. | Facilitates broader organizational and infrastructure profiling. | **Medium** |
 | 6 | **Active Host Discovered on Subnet** | Zenmap mapped a live host   | Identifies active endpoints for further internal network mapping. | **Low** |
 
+---
 
 ## 9. Recommendations
 Based on the findings from the reconnaissance and network scanning activities, I recommend the following security improvements to help strengthen the target website's security and improve local network visibility:
@@ -195,6 +216,7 @@ Based on the findings from the reconnaissance and network scanning activities, I
 *	**Network Monitoring and Device Management:** Regularly scan the local network to identify active devices and maintain an updated inventory of authorized hosts. Investigate any unfamiliar or unauthorized devices.
 *	**Further Security Assessment:** Conduct additional authorized security testing, including vulnerability assessment and configuration reviews, to validate potential security weaknesses that were not examined during these practical activities.
 
+---
 
 ## 10. Conclusion
 During Week 2 of my Cybersecurity Internship at Networkwalks, I successfully completed two practical activities focusing on network reconnaissance, footprinting, and network scanning. These activities provided an opportunity to apply theoretical cybersecurity knowledge using practical tools and techniques commonly used in penetration testing.
@@ -202,6 +224,18 @@ In the first activity (W2-PM1), I used six Kali Linux tools: **WHOIS, WhatWeb, N
 In the second activity (W2-PM5), I used Zenmap to perform a Ping Scan on my local network. The scan covered 256 IP addresses within the subnet <code>192.168.254.0/24</code> and successfully identified two active hosts: <code>192.168.254.254 and 192.168.254.1</code>. I also examined the available MAC address information and generated a network topology to visualize the discovered devices.
 Overall, these practical exercises strengthened my understanding of reconnaissance, DNS enumeration, web technology identification, host discovery, and network topology visualization. They also improved my confidence in using Kali Linux and Zenmap for authorized cybersecurity assessments.
 
+---
 
+## Author
+
+**Sayid Ahmed Mohamed Ali**  
+Cybersecurity Intern – Networkwalks
+**Internship:** Networkwalks  
+**Program/Batch:** B084-Networkwalks  
+**Domain:** Cybersecurity  
+**Week:** 02  
+**Modules:** W2-PM1 and W2-PM5
+
+---
 
  
