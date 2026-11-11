@@ -100,53 +100,59 @@ During Week 2 of my Cybersecurity Internship at Networkwalks, I performed domain
 </p>
 <p>
 I began with <strong>WHOIS</strong> to collect publicly available domain registration details, including registrar information, registration dates, and name servers. This helped me understand the domain's registration history and identify its associated DNS infrastructure.
-  
-  <img width="1908" height="977" alt="2" src="find the domain registration details.png">
 </p>
 <p>
-Next, I used <strong>WhatWeb</strong>  to identify the technologies powering the website. The results revealed the use of <strong>WordPress 7.1.4 and WP Download Manager 3.3.76,</strong> along with other web technologies. This provided an overview of the website's technology stack.
-  
-   <img width="1908" height="977" alt="2" src="whatwebto fingerprint the web technologies.png">
+Next, I used <strong>WhatWeb</strong>  to identify the technologies powering the website. The results revealed the use of <strong>WordPress <code>7.1.4</code> and WP Download Manager <code>3.3.76,</code></strong> along with other web technologies. This provided an overview of the website's technology stack.
 </p>
 <p>
-Using <strong>Nslookup,</strong> I resolved the domain name to its associated IP address, which was identified as <strong>192.232.216.135.</strong> This demonstrated how DNS translates domain names into IP addresses, allowing systems to locate web servers.
-  
-   <img width="1908" height="977" alt="2" src="nslookup.png">
+Using <strong>Nslookup,</strong> I resolved the domain name to its associated IP address, which was identified as <strong> <code>192.232.216.135.</code></strong> This demonstrated how DNS translates domain names into IP addresses, allowing systems to locate web servers.
 </p>
 <p>
 I then used <strong> cURL </strong> with the -I option to inspect the website's HTTP response headers and identify additional information about its web application, including the exposed WordPress REST API endpoint <code> /wp-json/.</code> This helped me understand how the web server communicates with clients and exposes application-related information.
   
-   <img width="1908" height="977" alt="2" src="Run curl -I to read the HTTP response headers.png">
 </p>
 <p>
 To investigate the website's security infrastructure, I used <strong>WAFW00F</strong> to identify the presence of a Web Application Firewall (WAF). The results indicated that <strong> ModSecurity (SpiderLabs)</strong> was protecting the website. This provided insight into the security technology used to help filter and monitor potentially malicious web traffic.
   
-   <img width="1908" height="977" alt="2" src="WAFW00F – Web Application Firewall detection..png">
 </p>
 <p>
 Finally, I used <strong> DNSRecon</strong> to perform DNS enumeration and gather additional information about the domain's DNS infrastructure, including name servers, mail servers, SPF/TXT records, service records, and other DNS-related details. This helped me understand how DNS records support domain services and infrastructure.
 
-   <img width="1908" height="977" alt="2" src="Run dnsreconto enumerate all DNS records..png">
 </p>
 
+## 5. Evidence Output
+ <img width="1908" height="977" alt="2" src="find the domain registration details.png">
+
+ <img width="1908" height="977" alt="2" src="whatwebto fingerprint the web technologies.png">
+
+  <img width="1908" height="977" alt="2" src="nslookup.png">
+
+<img width="1908" height="977" alt="2" src="Run curl -I to read the HTTP response headers.png">
+
+<img width="1908" height="977" alt="2" src="WAFW00F – Web Application Firewall detection..png">
+
+<img width="1908" height="977" alt="2" src="Run dnsreconto enumerate all DNS records..png">
+  
+
+   
 
 
-## 5. Module W2-PM5- Network Discovering Using Zenmap
+## 6. Module W2-PM5- Network Discovering Using Zenmap
 
 For the second activity, I used Zenmap to perform network discovery on my local network. The practical required me to identify my local IP address and subnet, discover active hosts, identify their IP and MAC addresses, and generate a network topology.
 I first used the Windows ipconfig command to identify my local network configuration. I then entered the target subnet into Zenmap and selected the Ping Scan profile to identify active hosts.
 
 The scan was performed using the following target network:
-*	**Target Subnet:** 192.168.254.0/24
+*	**Target Subnet:** <code>192.168.254.0/24</code>
 *	**Scan Profile:** Ping Scan
 *	**Total IP Addresses Scanned:** 256
   
  The scan successfully identified two active hosts:
-*	**192.168.254.254**
-*	**192.168.254.1**
+*	<code>192.168.254.254</code>
+*	<code>192.168.254.1</code>
   
 The scan results also identified the following MAC address:
-*	**192.168.254.254:** 00:50:56:F6:67:91 (VMware)
+*	**192.168.254.254:** <code>00:50:56:F6:67:91</code> (VMware)
 *	**192.168.254.1:** MAC address not displayed in the scan output.
   
 Both hosts were confirmed to be reachable. The scan completed successfully in approximately **8.65 seconds.**
@@ -155,7 +161,7 @@ After completing the scan, I opened the Topology section in Zenmap to visualize 
 
 > **Note:** The scan results documented above represent the actual results obtained from my local network during the practical exercise.
 
-## 6. Topology Output and Evidence
+## 7. Topology Output and Evidence
 
  <img width="1908" height="977" alt="2" src="zenmap 1.png">
 
@@ -166,7 +172,7 @@ After completing the scan, I opened the Topology section in Zenmap to visualize 
 
 
 
-## 7. Risk Analysis & Findings
+## 8. Risk Analysis & Findings
 
 | # | Risk / Finding | Evidence / Observation | Potential Impact | Severity |
 |---|---|---|---|---|
@@ -178,6 +184,23 @@ After completing the scan, I opened the Topology section in Zenmap to visualize 
 | 6 | **Active Host Discovered on Subnet** | Zenmap mapped a live host   | Identifies active endpoints for further internal network mapping. | **Low** |
 
 
+## 9. Recommendations
+Based on the findings from the reconnaissance and network scanning activities, I recommend the following security improvements to help strengthen the target website's security and improve local network visibility:
+
+*	**Regular Software Updates:** Keep WordPress, WP Download Manager, and other website components updated to their latest stable and supported versions to reduce the risk of known security vulnerabilities.
+*	**Web Technology** Information Protection: Review the website's configuration to minimize unnecessary disclosure of software versions and technical information that could assist attackers during reconnaissance.
+*	**HTTP** Security Configuration: Review HTTP response headers and implement appropriate security headers to improve web application protection and reduce unnecessary information exposure.
+*	**Web Application** Firewall (WAF): Maintain and regularly review the ModSecurity configuration to ensure that security rules are updated and effective in detecting and filtering potentially malicious web requests.
+*	**DNS Security Review:** Regularly review DNS records, including MX, TXT, SPF, and other service-related records, to ensure they are accurate, properly configured, and do not expose unnecessary information.
+*	**Network Monitoring and Device Management:** Regularly scan the local network to identify active devices and maintain an updated inventory of authorized hosts. Investigate any unfamiliar or unauthorized devices.
+*	**Further Security Assessment:** Conduct additional authorized security testing, including vulnerability assessment and configuration reviews, to validate potential security weaknesses that were not examined during these practical activities.
+
+
+## 10. Conclusion
+During Week 2 of my Cybersecurity Internship at Networkwalks, I successfully completed two practical activities focusing on network reconnaissance, footprinting, and network scanning. These activities provided an opportunity to apply theoretical cybersecurity knowledge using practical tools and techniques commonly used in penetration testing.
+In the first activity (W2-PM1), I used six Kali Linux tools: **WHOIS, WhatWeb, Nslookup, cURL, WAFW00F, and DNSRecon** to gather publicly available information about the target domain, identify its web technologies, examine DNS records, inspect HTTP response headers, and identify the Web Application Firewall. This exercise improved my understanding of how information gathering helps security professionals understand a target's digital infrastructure and potential security exposure.
+In the second activity (W2-PM5), I used Zenmap to perform a Ping Scan on my local network. The scan covered 256 IP addresses within the subnet <code>192.168.254.0/24</code> and successfully identified two active hosts: <code>192.168.254.254 and 192.168.254.1</code>. I also examined the available MAC address information and generated a network topology to visualize the discovered devices.
+Overall, these practical exercises strengthened my understanding of reconnaissance, DNS enumeration, web technology identification, host discovery, and network topology visualization. They also improved my confidence in using Kali Linux and Zenmap for authorized cybersecurity assessments.
 
 
 
